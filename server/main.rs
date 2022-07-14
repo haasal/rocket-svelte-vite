@@ -3,14 +3,19 @@ extern crate rocket;
 
 use rocket::fs::{relative, FileServer};
 
-#[get("/")]
+#[get("/hello")]
 fn index() -> &'static str {
     "Hello, world!"
 }
 
 #[launch]
 fn rocket() -> _ {
-    rocket::build()
-        .mount("/hello", routes![index])
-        .mount("/", FileServer::from(relative!("dist")))
+    let mut rocket = rocket::build().mount("/", routes![index]);
+
+    // mount Fileserver only when --release is set
+    if cfg!(not(debug_assertions)) {
+        rocket = rocket.mount("/", FileServer::from(relative!("dist")));
+    }
+
+    rocket
 }
