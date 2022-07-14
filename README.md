@@ -11,11 +11,25 @@ Install `cargo-watch` to use the live-preview
 cargo install cargo-watch
 ```
 
-The server can be started with
+There are three scripts at your disposal:
 
 ```bash
-$ npm run start
+npm run serve
 ```
+
+builds the vite project in watch mode and starts the rocket server in release mode. The release build of the rocket server, serves the static files from `dist`.
+
+```bash
+npm run dev
+```
+
+starts the vite dev-server + rocket in debug-mode. Rocket doesn't serve the static files and only acts as a backend server. There are two servers running so check the console output for their bound ports.
+
+```bash
+npm run build
+```
+
+builds the vite project and the rocket server in release mode. Rust files are located in `target` and vite files in `dist`.
 
 This command starts `vite build` in `watch` mode and `cargo watch -x run -w server`.
 Cargo is configured in a way that all rust code is in the `server`-directory instead of `src`.
