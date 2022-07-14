@@ -5,9 +5,8 @@
     };
 </script>
 
-<button
-    on:click={increment}
-    class="rounded bg-slate-200 hover:bg-slate-300 m-2 py-1 w-32 transition-all"
->
-    count is {count}
-</button>
+<main class="flex justify-center items-center h-screen">
+    <button on:click={increment} class="btn">
+        COUNT IS {count}
+    </button>
+</main>

@@ -1,3 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;1,200;1,300&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+    body,
+    html {
+        @apply min-h-screen;
+    }
+
+    #app {
+        @apply min-h-screen;
+        font-family: "Poppins", sans-serif;
+        font-weight: 300;
+    }
+}
+
+@layer components {
+    .btn {
+        @apply bg-gray-800 p-3 text-white font-medium text-sm;
+    }
+}
