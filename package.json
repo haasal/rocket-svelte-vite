@@ -4,9 +4,9 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
     "build": "vite build && cargo build --release",
-    "start": "concurrently --kill-others --raw \"cargo watch -x run -w ./server\" \"vite build --watch\"",
+    "serve": "vite build && cargo run --release", 
+    "dev": "concurrently --kill-others --raw \"cargo watch -x run -w ./server\" \"vite\"",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
