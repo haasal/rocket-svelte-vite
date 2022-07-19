@@ -11,6 +11,21 @@ Install `cargo-watch` to use the live-preview
 cargo install cargo-watch
 ```
 
+Clone the repository using [npm degit](https://www.npmjs.com/package/degit):
+
+```bash
+npm i -g degit
+degit haasal/rocket-svelte-vite your_project_name
+cd your_project_name
+npm install
+```
+
+If you wish to use for example the tailwind branch use
+
+```bash
+degit haasal/rocket-svelte-vite#tailwind your_project_name
+```
+
 There are three important scripts at your disposal:
 
 ```bash
