@@ -28,6 +28,23 @@
     <p class="read-the-docs">
         Click on the Vite and Svelte logos to learn more
     </p>
+
+    <p>
+        {#await fetch("/api/hello")}
+            Waiting for rocket server response... <br />
+            (Works only if rocket server was started. Make sure your run
+            <code>npm run dev:serve</code> )
+        {:then resp}
+            {#await resp.text() then value}
+                The Rocket server greets you: "{value
+                    ? value
+                    : "EMPTY RESPONSE"}"
+            {/await}
+        {:catch error}
+            Some error occured when fetching from rust server: <br />
+            "{error}"
+        {/await}
+    </p>
 </main>
 
 <style>
