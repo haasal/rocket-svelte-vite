@@ -11,7 +11,7 @@ Install `cargo-watch` to use the live-preview
 cargo install cargo-watch
 ```
 
-There are three scripts at your disposal:
+There are three important scripts at your disposal:
 
 ```bash
 npm run serve
@@ -20,10 +20,22 @@ npm run serve
 builds the vite project in watch mode and starts the rocket server in release mode. The release build of the rocket server, serves the static files from `dist`.
 
 ```bash
-npm run dev
+npm run dev:serve
 ```
 
 starts the vite dev-server + rocket in debug-mode. Rocket doesn't serve the static files and only acts as a backend server. There are two servers running so check the console output for their bound ports.
+
+```bash
+npm run dev:rocket
+```
+
+runs only the rocket server in debug+watch mode.
+
+```bash
+npm run dev:vite
+```
+
+runs only the vite dev server in isolation.
 
 ```bash
 npm run build
@@ -34,6 +46,7 @@ builds the vite project and the rocket server in release mode. Rust files are lo
 This command starts `vite build` in `watch` mode and `cargo watch -x run -w server`.
 Cargo is configured in a way that all rust code is in the `server`-directory instead of `src`.
 
+I might add new scripts in the future. So make sure to check out the package.json for any usefull scripts not listed here.
 ## How this project was setup
 
 First a simple svelte-ts-vite project was setup:

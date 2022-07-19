@@ -6,7 +6,9 @@
   "scripts": {
     "build": "vite build && cargo build --release",
     "serve": "concurrently --kill-others --raw \"vite build -w\" \"cargo run --release\"", 
-    "dev": "concurrently --kill-others --raw \"cargo watch -x run -w ./server\" \"vite\"",
+    "dev:serve": "concurrently --kill-others --raw \"cargo watch -x run -w ./server\" \"vite\"",
+    "dev:rocket": "cargo watch -x run -w ./server",
+    "dev:vite": "vite",
     "preview": "vite preview",
     "check": "svelte-check --tsconfig ./tsconfig.json"
   },
