@@ -3,7 +3,7 @@ extern crate rocket;
 
 use rocket::fs::{relative, FileServer};
 
-#[get("/hello")]
+#[get("/api/hello")]
 fn index() -> &'static str {
     "Hello, world!"
 }
